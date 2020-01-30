@@ -22,20 +22,19 @@
 
 %
 % Containers
-% http://docs.docker.io/en/latest/api/docker_remote_api_v1.4/#containers
-%
+% 
 
 % @doc Identical to the docker ps command.
 containers() -> containers(default_args(containers)).
 containers(Args) ->
-    ?PROPLISTS(erldocker_api:get([containers, ps], Args)).
+    ?PROPLISTS(erldocker_api:get([containers, json], Args)).
 
 % @doc Identical to the docker inspect command, but can only be used with a container ID.
 container(CID) ->
     ?PROPLIST(erldocker_api:get([containers, CID, json])).
 
 % @doc Creates a container that can then be started.
-% http://docs.docker.io/en/latest/api/docker_remote_api_v1.4/#create-a-container
+% 
 create(ConfigBin) ->
     erldocker_api:post([containers, create], ConfigBin).
 
