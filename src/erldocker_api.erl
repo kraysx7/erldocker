@@ -70,7 +70,7 @@ read_body(Receiver, Client) ->
     end.
 
 argsencode([], Acc) ->
-    hackney_util:join(lists:reverse(Acc), <<"&">>);
+    hackney_bstr:join(lists:reverse(Acc), <<"&">>);
 argsencode ([{_K,undefined}|R], Acc) ->
     argsencode(R, Acc);
 argsencode ([{K,V}|R], Acc) ->
