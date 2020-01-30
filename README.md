@@ -1,6 +1,6 @@
 ## erldocker
 
-`erldocker` is an Erlang application that implements [Docker Remote API v1.4](http://docs.docker.io/en/latest/api/docker_remote_api_v1.4/).
+`erldocker` is an Erlang application that implements [Docker Remote API v1.40](https://docs.docker.com/engine/api/v1.40).
 
 Public modules are: `docker`, `docker_container` and `docker_image`.
 
